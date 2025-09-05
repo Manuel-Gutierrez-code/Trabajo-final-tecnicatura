@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 3 TABLAS</title>
+    <style>
+        body {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+        }
+
+        div{
+            display: flex;
+            background-color: #555;
+            margin-bottom: 2rem;
+            justify-content: center;
+        }
+
+        table{
+            border: 2px solid #fff;
+            width: 75%;
+        }
+
+        tr, td {
+            border: 1px solid #fff;
+            padding: 20px;
+        }
+
+        th:hover {
+            background-color: #95a31b;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Case 3 - TABLAS</h1>
+
+    <div class="tabla-1">
+        <table>
+            <th>
+                <td>Mi tabla</td>
+            </th>
+            <tr>
+                <td>A</td>
+                <td>B</td>
+                <td>C</td>
+            </tr>
+            <tr>
+                <td>A</td>
+                <td>B</td>
+                <td>C</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="tabla-2">
+        <table>
+            <th>
+                <td>Mi tabla - 2</td>
+            </th>
+            <tr> 
+                <td colspan="2">A</td>
+                <td rowspan="2">C</td>
+            </tr>
+            <tr>
+                <td> D </td>
+                <td> E </td>
+            </tr>
+        </table>
+    </div>
+
+</body>
+</html>
