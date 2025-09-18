@@ -3,23 +3,31 @@ body {
 }
 
 header {
+    position: sticky;
     background-color: #000;
     color: #fff;
     padding: .5rem;
     text-align: center;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 
     h1 {
         margin: 0;
         display: inline-block;
     }
 
-    nav, ul, li {
+    nav,
+    ul,
+    li {
         display: inline-block;
     }
 
     li {
         margin-left: 2rem;
     }
+
     a {
         text-decoration: none;
         color: #fff;
@@ -30,8 +38,12 @@ main {
     width: 80%;
     margin: 1rem auto;
     text-align: left;
+    position: relative;
 
     article {
+
+        width: 75%;
+        display: inline-block;
 
         div {
             max-width: 40%;
@@ -41,6 +53,17 @@ main {
         h2 {
             margin-left: 2rem;
             display: inline-block;
+        }
+    }
+
+    aside {
+        width: 20%;
+        display: inline-block;
+        position: absolute;
+        top: 0;
+
+        img {
+            width: 100%;
         }
     }
 }
@@ -58,7 +81,7 @@ main {
         font-size: 1.2rem;
     }
 
-    img{
+    img {
         width: 100%;
     }
 
@@ -68,6 +91,37 @@ main {
 
     .video {
         text-align: center;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 2rem 0;
+        border: #000 2px solid;
+    }
+
+    tr {
+        background-color: blue;
+        color: #fff;
+        height: 1.5rem;
+    }
+
+    tr:nth-child(odd) {
+        background-color: yellow;
+        color: #000;
+    }
+}
+
+.contacto {
+    background-color: #ccc;
+    padding: 2rem;
+
+    ul {
+        list-style: none;
+    }
+
+    li {
+        margin: 1rem 0;
     }
 }
 
