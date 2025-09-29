@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    padding: 5rem 0;
+    display: grid;
+    place-items: center;
+    background-color: #f0f2f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+h1 {
+    margin: 3rem 0;
+}
+
+table,
+th,
+td,
+tr {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    padding: .5rem;
+}
+
+th {
+    background-color: #d6e5fa;
+}
+
+.importante {
+    background-color: #e0f7db;
+    font-weight: bold;
+}
+
+.cena {
+    background-color: #f8e3c7;
+}
+
+.escuela {
+    background-color: #edcbee;
+}

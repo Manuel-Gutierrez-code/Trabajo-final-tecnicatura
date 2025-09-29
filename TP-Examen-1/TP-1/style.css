@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f0f0f0;
+}
+
+header {
+    background-image: url('https://www.shutterstock.com/image-photo/fresh-premium-roasted-brown-arabica-600w-2644544047.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 3rem;
+    text-align: center;
+}
+
+h1 {
+    display: inline-block;
+    padding: 0 2rem;
+    background-color: #5b3a29;
+    color: #d1d1d1;
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #333;
+}
+
+p {
+    color: #555;
+    font-size: 1.2rem;
+}
+
+#menu {
+    padding: 1rem 5rem;
+
+    .item {
+
+        display: inline-block;
+        width: 100%;
+
+        h2,
+        p {
+            display: inline-block;
+            width: 49%;
+        }
+
+        p {
+            color: green;
+            font-weight: bold;
+        }
+    }
+}
+
+.destacado {
+    color: blueviolet;
+}
+
+footer {
+    background-color: #5b3a29;
+    padding: 3rem;
+    text-align: center;
+
+    p {
+        color: #d1d1d1;
+        font-weight: bold;
+    }
+
+    ul {
+        list-style: none;
+    }
+}
+
+footer ul li:first-child {
+    color: yellow;
+
+    a {
+        color: yellow;
+    }
+}
