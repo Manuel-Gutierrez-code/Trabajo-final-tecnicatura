@@ -37,3 +37,41 @@ SELECT E.FirstName, O.OrderID, O.OrderDate, P.ProductName
 FROM Employees E, Orders O, Products P, OrderDetails OD
 WHERE E.EmployeeID = O.EmployeeID AND O.OrderID = OD.OrderID AND OD.ProductID = P.ProductID AND 
 E.EmployeeID = 5 AND P.ProductID;
+
+-- Consulta 7
+
+SELECT O.OrderID, P.ProductName  
+FROM Products P, Orders O, OrderDetails OD
+WHERE O.OrderID = OD.OrderID AND OD.ProductID = P.ProductID AND
+O.EmployeeID = 5;
+
+-- Consulta 8
+
+SELECT O.OrderID, O.OrderDate, C.ContactName, P.ProductName
+FROM Orders O, Customers C, Suppliers S, OrderDetails OD, Products P
+WHERE C.CustomerID = O.CustomerID AND O.OrderID = OD.OrderID AND P.ProductID = OD.ProductID AND P.SupplierID = S.SupplierID AND
+C.Country = S.Country;
+
+-- Consulta 9
+
+SELECT O.OrderID, P.ProductID, P.ProductName, P.Price, OD.Quantity, P.Price * OD.Quantity AS Subtotal
+FROM Orders O, OrderDetails OD, Products P, Categories C
+WHERE O.OrderID = OD.OrderID AND OD.ProductID = P.ProductID AND P.CategoryID = C.CategoryID AND
+C.CategoryID = 3;
+
+-- Consulta 10
+
+SELECT O.OrderID, O.OrderDate, E.FirstName, C.ContactName
+FROM Orders O, Customers C, Employees E
+WHERE E.EmployeeID = O.EmployeeID AND O.CustomerID = C.CustomerID AND
+O.OrderDate BETWEEN #1/1/1997# AND #12/31/1997#; --EN ESTE MOTOR LA FORMA DE COMPARAR FECHAS ES CON '#'
+
+-- Consulta 11
+
+SELECT O.OrderID, O.OrderDate, E.FirstName, C.ContactName
+FROM Orders O, Customers C, Employees E
+WHERE E.EmployeeID = O.EmployeeID AND O.CustomerID = C.CustomerID AND
+O.OrderDate BETWEEN #1/1/2025# AND #12/31/2025#;  --EN ESTE MOTOR LA FORMA DE COMPARAR FECHAS ES CON '#'
+
+-- Consulta 12
+
