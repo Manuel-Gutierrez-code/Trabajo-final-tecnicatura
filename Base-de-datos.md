@@ -73,5 +73,16 @@ FROM Orders O, Customers C, Employees E
 WHERE E.EmployeeID = O.EmployeeID AND O.CustomerID = C.CustomerID AND
 O.OrderDate BETWEEN #1/1/2025# AND #12/31/2025#;  --EN ESTE MOTOR LA FORMA DE COMPARAR FECHAS ES CON '#'
 
--- Consulta 12
+-- Consulta 13
 
+SELECT C.CategoryID, C.CategoryName, SUM(OD.Quantity) AS Ventas, SUM(OD.Quantity * P.Price) AS Ganancia
+FROM Categories C, Products P, OrderDetails OD
+WHERE C.CategoryID = P.CategoryID AND P.ProductID = OD.ProductID
+GROUP BY C.CategoryID, C.CategoryName;
+
+-- Consulta 15
+
+SELECT C.CategoryID, C.CategoryName, SUM(OD.Quantity) AS Ventas, SUM(OD.Quantity * P.Price) AS Ganancia, MIN(OD.Quantity * P.Price) AS Minimo, MAX(OD.Quantity * P.Price) AS Maximo
+FROM Categories C, Products P, OrderDetails OD
+WHERE C.CategoryID = P.CategoryID AND P.ProductID = OD.ProductID
+GROUP BY C.CategoryID, C.CategoryName;
