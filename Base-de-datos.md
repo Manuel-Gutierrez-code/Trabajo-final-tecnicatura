@@ -109,9 +109,25 @@ GROUP BY E.EmployeeID, E.FirstName
 
 -- Cuál es el empleado que ha participado de una mayor cantidad de ventas? Mostrar Nombre de empleado y cantidad de ventas
 
-SELECT E.FirstName, COUNT(O.OrderID) 
+SELECT E.FirstName, E.LastName, COUNT(O.OrderID) AS ventas
 FROM Employees E NATURAL JOIN Orders O
-GROUP BY E.EmployeeID, E.FirstName --NO TERMINADO
+GROUP BY E.EmployeeID, E.FirstName
+ORDER BY ventas DESC
+LIMIT 1;
+
+-- Consulta 20
+
+SELECT DISTINCT ProductName
+FROM products
+WHERE ProductID NOT IN (
+	SELECT ProductID
+    FROM order_details NATURAL JOIN orders
+    WHERE YEAR(OrderDate) = 1996
+)
+
+-- Consulta 21
+
+
 
 -- 1000 FORMAS DE RESOLVER UN EJ
 
@@ -123,8 +139,15 @@ WHERE C.CodigoCliente NOT IN (
     SELECT P.CodigoCliente
     FROM Pedidos P
     WHERE YEAR(FechaPedido) = YEAR(CURRENT_DATE)
-)
+);
 
 -- Consulta C
 
 
+SELECT P.CodigoArticulo, P.NombreArticulo, P.PaisDeOrigen
+FROM Clientes C NATURAL JOIN Pedidos Pe
+    NATURAL JOIN ProductosPedidos PP
+    NATURAL JOIN Productos P
+WHERE C.Poblacion = 'Madrid' AND
+    P.Rubro = 'Ferreteria'
+ORDER BY P.PaisDeOrigen;
